@@ -3,8 +3,7 @@ import json
 import urllib.request
 import zipfile
 
-def save(data, html, page_num, project_index):
-    output_dir = 'website1\output'
+def save(output_dir, data, html, page_num, project_index):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 

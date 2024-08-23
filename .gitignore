@@ -1,2 +1,4 @@
 website1/output/*
+website2/output/*
 __pycache__/
+*.docx

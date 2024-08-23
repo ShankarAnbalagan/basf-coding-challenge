@@ -31,4 +31,4 @@ class Website1Spider(scrapy.Spider):
         page_num = parse_qs(parsed_url.query)['currentSelectorPage'][0]
 
         project_data, project_html = website1_scrape.extract_data(base_url, response.body)
-        save_data.save(project_data, project_html, page_num, project_index)
+        save_data.save('website1\output', project_data, project_html, page_num, project_index)
