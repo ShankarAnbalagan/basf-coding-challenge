@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait 
 from selenium.webdriver.support import expected_conditions
@@ -68,5 +67,4 @@ class SeleniumDriver:
         data['download_links'] = download_links
 
         print(data)
-        return data, soup.prettify()
-    
+        return data, soup.prettify()    

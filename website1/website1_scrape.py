@@ -22,6 +22,14 @@ def extract_data(base_url, html):
     description = description_title_element.find_next_sibling('p').string
     data['description'] = description
 
+    date_title_element = soup.find('h4', string="""
+            Datum der Entscheidung
+                    """)
+    if date_title_element is not None:
+        data['date'] = date_title_element.find_next_sibling('p').string
+    else:
+        data['date'] = ''
+
     download_link = soup.find('a', title='Alle Dokumente als ZIP-Datei herunterladen')['href']
     data['download_link'] = download_link
     

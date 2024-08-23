@@ -34,6 +34,11 @@ def save(output_dir, data, html, page_num, project_index):
                 filename = content_disposition.split('filename=')[-1].strip('\"')
                 download_file_path = os.path.join(attachment_dir, filename)
 
+                if(len(download_file_path) > 256):
+                    extra_characters = len(download_file_path) - 256
+                    filename = filename.strip('.zip')[:-extra_characters] + '.zip'
+                    download_file_path = os.path.join(attachment_dir, filename)
+
                 with open(download_file_path, 'wb') as file:
                     file.write(response.read())
         
